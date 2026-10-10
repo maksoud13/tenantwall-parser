@@ -1,0 +1,7 @@
+venv/
+pycache/
+*.pyc
+.pytest_cache/
+*.log
+.idea/
+.vscode/

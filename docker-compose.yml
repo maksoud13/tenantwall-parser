@@ -1,0 +1,13 @@
+services:
+  parser:
+    build: .
+    container_name: tenantwall-parser
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    volumes:
+      - ./app:/app/app
+      - ./complex.sql:/app/complex.sql
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
